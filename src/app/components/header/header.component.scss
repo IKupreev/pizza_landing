@@ -9,10 +9,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 22.3px;
+  max-height: 100px;
+  //padding: 0;
+  //padding-top: 22.3px;
   // .header__logo
 
   &__logo {
+    margin-top: 22.3px;
+    margin-bottom: 22.3px;
     margin-left: 90.62px;
   }
 
@@ -22,6 +26,7 @@
     display: flex;
     align-items: center;
     margin-right: 100px;
+
     //justify-content: ;
     //margin-left: 655px;
   }
