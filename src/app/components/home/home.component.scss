@@ -100,13 +100,14 @@
 
   &__row {
     display: flex;
+    border: 2px solid black;
     margin: 0px -20px;
   }
 
   // .menu__column
 
   &__column {
-    padding: 0px 25px;
+    padding: 0px 20px;
     flex: 0 1 33.333%;
     display: flex;
   }
@@ -129,6 +130,7 @@
   // .menu__image
 
   &__image {
+
   }
 
   // .menu__subtitle
