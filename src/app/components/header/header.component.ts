@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  condition: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggle() {
+    this.condition=!this.condition;
+  }
 }

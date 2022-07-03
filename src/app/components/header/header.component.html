@@ -1,4 +1,26 @@
 <header class="header">
+  <button (click)="toggle()" class="header__mobile">
+    <span class="header__mobile-icon"></span>
+  </button>
+  <div *ngIf="condition" class="header__mobile-nav">
+    <ul class="header__nav">
+      <li class="header__nav-item">
+        <a class="header__nav-link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}"
+        routerLink="./home">Home</a></li>
+      <li class="header__nav-item">
+        <a class="header__nav-link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}"
+        routerLink="./menu">Menu</a></li>
+      <li class="header__nav-item">
+        <a class="header__nav-link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}"
+        routerLink="./promo">Promo</a></li>
+    </ul>
+  </div>
   <img src="assets/images/icons/Logo.svg" alt="Pizza Time" class="header__logo">
   <div class="header__nav-right">
     <ul class="header__nav">
@@ -22,22 +44,16 @@
       <li class="header__btns-item">
         <button class="header__btns-search">
           <img src="assets/images/icons/Search.svg">
-          <!-- <a class="header__btns-search" href="#">
-            <img src="assets/images/icons/Search.svg">
-          </a> -->
         </button>
       </li>
       <li class="header__btns-item">
         <button class="header__btns-cart">
           <img src="assets/images/icons/cart.svg">
-          <!-- <a class="header__btns-cart" href="#">
-            <img src="assets/images/icons/cart.svg">
-          </a> -->
         </button>
       </li>
       <li class="header__btns-item">
         <button class="header__btns-sign">
-          SIGN IN
+          <span class="header__sign-text">SIGN IN</span>
         </button>
       </li>
     </ul>

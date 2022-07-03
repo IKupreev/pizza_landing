@@ -22,9 +22,7 @@
   position: absolute;
   left: 50%;
   top: -50px;
-  //transform: translate(562px, -50px);
-  //left: 562px;
-  //margin-left: 562px;
+
 }
 
 .leaf-left{
@@ -37,6 +35,40 @@
 .leaf-bottom-right {
   position: absolute;
   top: 20px;
+}
+
+@media(max-width: 800px) {
+  .leaf-top {
+    width: 50px;
+    top: -40px;
+  }
+  .leaf-left{
+    width: 250px;
+    top: 720px;
+    left: -120px;
+  }
+
+  .container {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+
+@media(max-width: 400px) {
+  .leaf-top {
+    width: 30px;
+    top: -20px;
+  }
+  .container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+.main {
+  display: none;
+
 }
 
 
