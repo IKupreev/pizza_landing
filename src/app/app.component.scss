@@ -37,6 +37,13 @@
   top: 20px;
 }
 
+.tomato-right {
+  position:absolute;
+  right: -180px;
+  top: 600px;
+  z-index: 5;
+}
+
 @media(max-width: 800px) {
   .leaf-top {
     width: 50px;
@@ -46,6 +53,12 @@
     width: 250px;
     top: 720px;
     left: -120px;
+  }
+  .tomato-right {
+    width: 180px;
+    top: 600px;
+    right: -100px;
+    z-index: 5;
   }
 
   .container {
@@ -66,10 +79,6 @@
 }
 
 
-.main {
-  display: none;
-
-}
 
 
 
