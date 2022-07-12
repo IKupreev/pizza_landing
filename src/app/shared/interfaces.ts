@@ -1,6 +1,6 @@
 export interface Menu {
-  id?: string;
-  title: string;
-  description: string;
-  price: number;
+  id?: number;
+  Title: string;
+  Description: string;
+  Price: string;
 }

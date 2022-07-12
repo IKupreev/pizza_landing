@@ -11,14 +11,14 @@ import { Menu } from 'src/app/shared/interfaces';
 export class MenuComponent implements OnInit {
 
   //menuList!: Observable<Menu[]>
-  menuList: any = [];
+  menuList: Menu[] = [];
 
   constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {
     //this.menuList = this.menuService.getMenuList();
-    this.menuService.getMenuList().subscribe(res => {
-      this.menuList = res;
+    this.menuService.getMenuList().subscribe((res: any) => {
+      this.menuList = res["cols"];
       console.log(this.menuList);
     })
 
