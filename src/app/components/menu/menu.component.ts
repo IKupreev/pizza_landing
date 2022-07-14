@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MenuService } from 'src/app/services/menu.service';
 import { Menu } from 'src/app/shared/interfaces';
@@ -10,18 +10,38 @@ import { Menu } from 'src/app/shared/interfaces';
 })
 export class MenuComponent implements OnInit {
 
-  //menuList!: Observable<Menu[]>
-  menuList: Menu[] = [];
+  menuList!: Observable<Menu[]>
+  //menuList: Menu[] = [];
+  //menu: Menu | undefined;
+  //@Input() menu!: Menu;
+  //menuList$!: Observable<Menu[]>
 
   constructor(private menuService: MenuService) { }
 
-  ngOnInit(): void {
-    //this.menuList = this.menuService.getMenuList();
-    this.menuService.getMenuList().subscribe((res: any) => {
-      this.menuList = res["cols"];
-      console.log(this.menuList);
-    })
+  // loadMenu() {
+  //   this.menuService.getMenuList()
+  //     .subscribe((data: Menu) => this.menu = {
+  //         id: data.id,
+  //         Title: data.Title,
+  //         Description: data.Description,
+  //         Price: data.Price,
+  //   });
+    // this.menuService.getMenuList()
+    //   .subscribe(resp => {
+    //     const keys = resp.headers.keys();
+    //     const header = keys.map(key =>
+    //       `${key}: ${resp.headers.get(key)}`);
 
+    //       this.menu = {
+    //         ...resp.body!
+    //       };
+    //   })
+  //}
+
+  ngOnInit() {
+    this.menuList = this.menuService.getMenuList();
+    //console.log("Load Menu: " + this.menuList$);
+    //console.log("Title: " + this.menu?.Title);
   }
 
 }

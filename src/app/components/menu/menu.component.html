@@ -65,3 +65,12 @@
       </div>
     </div>
 </div>
+
+  <ul>
+    <li *ngFor="let m of menuList | async">
+      <p>Title: {{ m?.Title }}</p>
+      <p>Description: {{ m?.Description }}</p>
+      <p>Price: {{ m?.Price }}</p>
+    </li>
+  </ul>
+
