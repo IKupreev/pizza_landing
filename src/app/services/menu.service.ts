@@ -10,11 +10,12 @@ import { map, Observable } from 'rxjs';
 })
 export class MenuService {
 
-  //url = `https://docs.google.com/spreadsheets/d/${environment.apiKey}/gviz/tq?tqx=out:json`
-  url = 'assets/MenuPizzas.json'
+  url = `https://docs.google.com/spreadsheets/d/${environment.apiKey}/gviz/tq?tqx=out:json`
+  //url = 'assets/MenuPizzas.json'
   constructor(private http: HttpClient) { }
 
   getMenuList() {
-    return this.http.get<Menu[]>(this.url);
+    //return this.http.get<Menu[]>(this.url);
+    //return this.http.jsonp.re
   }
 }
