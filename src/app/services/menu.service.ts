@@ -15,7 +15,8 @@ export class MenuService {
   constructor(private http: HttpClient) { }
 
   getMenuList() {
-    //return this.http.get<Menu[]>(this.url);
-    //return this.http.jsonp.re
+     return this.http.get<Menu[]>(this.url);
+
+
   }
 }

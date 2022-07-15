@@ -10,7 +10,7 @@ import { Menu } from 'src/app/shared/interfaces';
 })
 export class MenuComponent implements OnInit {
 
-  menuList!: Observable<Menu[]>
+  menuList!: Observable<Menu[]>;
   //menuList: Menu[] = [];
   //menu: Menu | undefined;
   //@Input() menu!: Menu;
@@ -39,8 +39,9 @@ export class MenuComponent implements OnInit {
   //}
 
   ngOnInit() {
-    this.menuList = this.menuService.getMenuList();
-    //console.log("Load Menu: " + this.menuList$);
+    this.menuList = this.menuService.getMenuList()
+
+    console.log("Load Menu: " + this.menuList);
     //console.log("Title: " + this.menu?.Title);
   }
 
