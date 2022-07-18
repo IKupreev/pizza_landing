@@ -9,20 +9,15 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MenuService {
-  url = `https://docs.google.com/spreadsheets/d/${environment.apiKey}/gviz/tq?tqx=out:json`
-  //url = 'assets/MenuPizzas.json'
+  //url = `https://docs.google.com/spreadsheets/d/${environment.apiKey}/gviz/tq?tqx=out:json`
+  url = 'http://localhost:3000/api/menu'
   constructor(private http: HttpClient) { }
 
-  getMenuList() {
-    return this.http.get<Menu[]>(this.url);
-    // return this.http.get(this.url, {observe: 'events'})
-    // .pipe(
-    //   map((data:HttpEvent<object>) => {
-    //     if(data.type === HttpEventType.Response) {
-    //       console.log('Event type: ', data)
-    //     }
-    //   })
-    // );
+  getMenuList(): Observable<Menu[]> {
+    return this.http.get(this.url).pipe(
+      map((res: any) => res["menu"])
+    )
+
 
   }
 }
