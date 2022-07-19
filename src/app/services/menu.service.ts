@@ -1,4 +1,3 @@
-import { Menu } from 'src/app/shared/interfaces';
 import { apiResponse } from './../shared/interfaces';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http'
@@ -15,8 +14,9 @@ export class MenuService {
   url = 'http://localhost:3000/api/menu'
   constructor(private http: HttpClient) { }
 
-  getMenuList(): Observable<Menu[]> {
-    return this.http.get<Menu[]>(this.url)
+  getMenuList(): Observable<apiResponse[]> {
+    return this.http.get<apiResponse[]>(this.url)
+
 
   }
 }

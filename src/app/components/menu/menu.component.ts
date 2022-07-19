@@ -11,7 +11,7 @@ import { Menu } from 'src/app/shared/interfaces';
 })
 export class MenuComponent implements OnInit {
 
- menuList!: Observable<Menu[]>;
+ menuList!: Observable<apiResponse[]>;
  //menuList: Menu[] = [];
  // menuList: apiResponse;
   //menu: Menu | undefined;
@@ -46,7 +46,7 @@ export class MenuComponent implements OnInit {
   //  })
   this.menuList = this.menuService.getMenuList();
    //this.menuService.getMenuList().subscribe
-   // console.log("Load Menu: " + this.menuList, this.menuList);
+    console.log("Load Menu: " , this.menuList);
     //console.log("Title: " + this.menu?.Title);
   }
 
