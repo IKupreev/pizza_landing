@@ -1,5 +1,6 @@
+import { apiResponse } from './../../shared/interfaces';
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { MenuService } from 'src/app/services/menu.service';
 import { Menu } from 'src/app/shared/interfaces';
 
@@ -10,8 +11,9 @@ import { Menu } from 'src/app/shared/interfaces';
 })
 export class MenuComponent implements OnInit {
 
-  menuList!: Observable<Menu[]>;
- // menuList: Menu[] = [];
+ menuList!: Observable<Menu[]>;
+ //menuList: Menu[] = [];
+ // menuList: apiResponse;
   //menu: Menu | undefined;
   //@Input() menu!: Menu;
   //menuList$!: Observable<Menu[]>
@@ -39,9 +41,12 @@ export class MenuComponent implements OnInit {
   //}
 
   ngOnInit() {
-   this.menuList = this.menuService.getMenuList();
+  //  this.menuService.getMenuList().subscribe((data) => {
+  //   console.log(data)
+  //  })
+  this.menuList = this.menuService.getMenuList();
    //this.menuService.getMenuList().subscribe
-    console.log("Load Menu: " + this.menuList);
+   // console.log("Load Menu: " + this.menuList, this.menuList);
     //console.log("Title: " + this.menu?.Title);
   }
 

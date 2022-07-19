@@ -1,8 +1,10 @@
+import { Menu } from 'src/app/shared/interfaces';
+import { apiResponse } from './../shared/interfaces';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { Menu } from '../shared/interfaces';
-import { map, Observable } from 'rxjs';
+import { map, Observable, pipe } from 'rxjs';
 
 
 @Injectable({
@@ -14,10 +16,7 @@ export class MenuService {
   constructor(private http: HttpClient) { }
 
   getMenuList(): Observable<Menu[]> {
-    return this.http.get(this.url).pipe(
-      map((res: any) => res["menu"])
-    )
-
+    return this.http.get<Menu[]>(this.url)
 
   }
 }
