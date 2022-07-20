@@ -4,6 +4,7 @@ import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { Menu } from '../shared/interfaces';
 import { map, Observable, pipe } from 'rxjs';
+import { pluck } from 'rxjs/operators';
 
 
 @Injectable({
@@ -14,8 +15,10 @@ export class MenuService {
   url = 'http://localhost:3000/api/menu'
   constructor(private http: HttpClient) { }
 
-  getMenuList(): Observable<apiResponse[]> {
-    return this.http.get<apiResponse[]>(this.url)
+  getMenuList(): Observable<Menu[]> {
+    return this.http.get<apiResponse>(this.url).pipe(pluck('pizza', 'menu'));
+
+
 
 
   }

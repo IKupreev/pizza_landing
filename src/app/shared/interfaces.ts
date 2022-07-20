@@ -1,14 +1,14 @@
 export interface apiResponse {
-  menu: Menu[]
+  pizza: {
+   menu: Menu[];
+  };
 }
-export interface Pizza {
-  menu: Menu[]
-}
+
 export interface Menu {
   id?: string;
-  Title: string;
-  Description: string;
-  Price: string;
+  title: string;
+  description: string;
+  price: string;
 }
 
 

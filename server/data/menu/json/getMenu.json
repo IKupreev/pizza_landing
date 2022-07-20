@@ -1,23 +1,23 @@
 {
-  "Pizza": {
+  "pizza": {
     "menu": [
       {
         "id": 1,
-        "Title":"Cheese Lovers",
-        "Description":"Combination of Alfredo sauce and two cheeses – Romano, and Parmesan.",
-        "Price": "$20.00"
+        "title":"Cheese Lovers",
+        "description":"Combination of Alfredo sauce and two cheeses – Romano, and Parmesan.",
+        "price": "$20.00"
       },
       {
         "id": 2,
-        "Title":"Pepperoni Pizza",
-        "Description":"Pizza with homemade spicy beef sausage",
-        "Price": "$25.00"
+        "title":"Pepperoni Pizza",
+        "description":"Pizza with homemade spicy beef sausage",
+        "price": "$25.00"
       },
       {
         "id": 3,
-        "Title":"Margherita Pizza",
-        "Description":"Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.",
-        "Price": "$35.00"
+        "title":"Margherita Pizza",
+        "description":"Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.",
+        "price": "$35.00"
       }
     ]
   }
