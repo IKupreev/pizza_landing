@@ -6,6 +6,7 @@ export interface apiResponse {
 
 export interface Menu {
   id?: string;
+  image: string;
   title: string;
   description: string;
   price: string;
