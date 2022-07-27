@@ -12,4 +12,10 @@ export interface Menu {
   price: string;
 }
 
+export interface Product {
+  id?: string;
+  title: string;
+  price: string;
+}
+
 
