@@ -13,7 +13,9 @@ import { Menu } from 'src/app/shared/interfaces';
 export class MenuComponent implements OnInit {
 
  menuList!: Observable<Menu[]>;
-
+ addToCartClick = false;
+ cartBtn = false;
+ counter: number = 0;
 
   constructor(
     private menuService: MenuService,
@@ -21,14 +23,18 @@ export class MenuComponent implements OnInit {
 
 
   ngOnInit() {
-
+    window.addEventListener('scroll', () => {
+      this.cartBtn = window.pageYOffset !== 0 && this.addToCartClick;
+    })
   this.menuList = this.menuService.getMenuList();
 
   }
 
   addToCart(menu: Menu) {
     this.cartService.addToCart(menu);
-    window.alert(`Your product has been added to the cart!`);
+    this.addToCartClick = true;
+    this.cartBtn = true;
+    this.counter = this.cartService.counter;
     console.log(this.cartService.eats)
   }
 

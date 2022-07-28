@@ -7,10 +7,12 @@ import { Injectable } from '@angular/core';
 export class CartService {
 
   eats: Product[] = [];
+  counter: number = 0;
   constructor() { }
 
   addToCart(product: Product) {
     this.eats.push(product);
+    this.counter++;
   }
 
   getItems() {
@@ -19,6 +21,7 @@ export class CartService {
 
   clearCart() {
     this.eats = [];
+    this.counter = 0;
     return this.eats;
   }
 }
