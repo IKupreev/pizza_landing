@@ -236,6 +236,14 @@
   // .header__btns-cart
 
   &__btns-cart {
+    position: relative;
+  }
+  &__btns-cart::after {
+    display: block;
+    position: absolute;
+    content: attr(data-counter);
+    right: -2px;
+    top: -10px;
   }
 
   // .header__btns-sign

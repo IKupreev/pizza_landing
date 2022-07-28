@@ -19,7 +19,8 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private menuService: MenuService,
-    private cartService: CartService) { }
+    private cartService: CartService,
+    ) { }
 
 
   ngOnInit() {
@@ -35,7 +36,6 @@ export class MenuComponent implements OnInit {
     this.addToCartClick = true;
     this.cartBtn = true;
     this.counter = this.cartService.counter;
-    console.log(this.cartService.eats)
   }
 
 }
