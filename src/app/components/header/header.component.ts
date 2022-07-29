@@ -13,7 +13,14 @@ export class HeaderComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
-    this.headerCount = this.cartService.counter;
+    this.cartService.productCounter.subscribe((counter) => {
+      if(counter > 0)
+      {
+        this.condition = true;
+      }
+
+      this.headerCount = counter;
+    })
   }
 
   toggle() {

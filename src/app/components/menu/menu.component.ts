@@ -16,6 +16,7 @@ export class MenuComponent implements OnInit {
  addToCartClick = false;
  cartBtn = false;
  counter: number = 0;
+ //click: boolean = false;
 
   constructor(
     private menuService: MenuService,
@@ -35,7 +36,9 @@ export class MenuComponent implements OnInit {
     this.cartService.addToCart(menu);
     this.addToCartClick = true;
     this.cartBtn = true;
-    this.counter = this.cartService.counter;
+    this.counter++;
+    this.cartService.productCounter.next(this.counter);
+   // this.counter = this.cartService.counter;
   }
 
 }

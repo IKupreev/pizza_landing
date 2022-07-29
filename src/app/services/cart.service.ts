@@ -1,5 +1,6 @@
 import { Product } from './../shared/interfaces';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,21 +8,25 @@ import { Injectable } from '@angular/core';
 export class CartService {
 
   eats: Product[] = [];
-  counter: number = 0;
-  constructor() { }
+  productCounter: BehaviorSubject<number> = new BehaviorSubject(0);
+  //counter: number = 0;
+  //counter$ = this.productCounter.asObservable();
 
   addToCart(product: Product) {
     this.eats.push(product);
-    this.counter++;
+    //this.counter++;
   }
 
+  // onChanged(increased: boolean) {
+  //   this.productCounter.next(increased);
+  // }
   getItems() {
     return this.eats;
   }
 
   clearCart() {
     this.eats = [];
-    this.counter = 0;
+    //this.counter = 0;
     return this.eats;
   }
 }
