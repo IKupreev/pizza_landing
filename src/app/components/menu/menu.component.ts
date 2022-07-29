@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CartService } from './../../services/cart.service';
 import { apiResponse } from './../../shared/interfaces';
 import { Component, Input, OnInit } from '@angular/core';
@@ -16,11 +17,11 @@ export class MenuComponent implements OnInit {
  addToCartClick = false;
  cartBtn = false;
  counter: number = 0;
- //click: boolean = false;
 
   constructor(
     private menuService: MenuService,
     private cartService: CartService,
+    private router: Router
     ) { }
 
 
@@ -38,7 +39,13 @@ export class MenuComponent implements OnInit {
     this.cartBtn = true;
     this.counter++;
     this.cartService.productCounter.next(this.counter);
-   // this.counter = this.cartService.counter;
   }
+
+
+  open(){
+    this.router.navigate(['/cart'])
+  }
+
+
 
 }

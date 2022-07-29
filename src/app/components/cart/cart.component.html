@@ -1,3 +1,8 @@
-<button class="btns-cart">
-  <img src="assets/images/icons/cart.svg">
-</button>
+<div class="cart">
+<h3>Cart</h3>
+<div class="cart__item" *ngFor="let p of products">
+     <span>{{ p.title }} </span>
+     <span>{{ p.price }} </span>
+</div>
+</div>
+

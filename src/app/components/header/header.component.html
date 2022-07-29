@@ -58,7 +58,7 @@
         </button>
       </li>
       <li class="header__btns-item">
-        <button class="header__btns-cart" [attr.data-counter]="condition ? headerCount : '' ">
+        <button type="button" (click)="open()" class="header__btns-cart" [attr.data-counter]="visibleCounter ? headerCount : '' ">
           <img src="assets/images/icons/cart.svg">
         </button>
       </li>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -9,14 +10,18 @@ import { CartService } from 'src/app/services/cart.service';
 export class HeaderComponent implements OnInit {
 
   condition: boolean = false;
+  visibleCounter: boolean = false;
   headerCount: number = 0;
-  constructor(private cartService: CartService) { }
+
+  constructor(
+    private cartService: CartService,
+    private router: Router) { }
 
   ngOnInit() {
     this.cartService.productCounter.subscribe((counter) => {
       if(counter > 0)
       {
-        this.condition = true;
+        this.visibleCounter = true;
       }
 
       this.headerCount = counter;
@@ -26,4 +31,10 @@ export class HeaderComponent implements OnInit {
   toggle() {
     this.condition=!this.condition;
   }
+
+
+  open(){
+    this.router.navigate(['/cart'])
+  }
+
 }
