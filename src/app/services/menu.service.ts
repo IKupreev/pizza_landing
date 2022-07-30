@@ -11,9 +11,8 @@ import { pluck } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class MenuService {
-  //url = `https://docs.google.com/spreadsheets/d/${environment.apiKey}/gviz/tq?tqx=out:json`
-  //url = 'assets/MenuPizzas.json';
-  url = 'http://localhost:3000/api/menu';
+  url = 'assets/MenuPizzas.json';
+  //url = 'http://localhost:3000/api/menu';
   constructor(private http: HttpClient) { }
 
   getMenuList(): Observable<Menu[]> {
