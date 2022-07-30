@@ -12,6 +12,10 @@ export class CartComponent  {
 
   constructor(private cartService: CartService) { }
 
+  buy() {
+    this.cartService.clearCart();
+    this.products=[];
 
+  }
 
 }

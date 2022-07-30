@@ -26,7 +26,7 @@ export class CartService {
 
   clearCart() {
     this.eats = [];
-    //this.counter = 0;
+    this.productCounter.next(0);
     return this.eats;
   }
 }

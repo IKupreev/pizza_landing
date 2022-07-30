@@ -30,7 +30,9 @@ export class MenuComponent implements OnInit {
       this.cartBtn = window.pageYOffset !== 0 && this.addToCartClick;
     })
   this.menuList = this.menuService.getMenuList();
-
+    this.cartService.productCounter.subscribe((counter) => {
+      this.counter = counter;
+    })
   }
 
   addToCart(menu: Menu) {
