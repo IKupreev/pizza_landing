@@ -11,7 +11,8 @@ export class HeaderComponent implements OnInit {
 
   condition: boolean = false;
   visibleCounter: boolean = false;
-  headerCount: number = 0;
+  cartCount: number = 0;
+
 
   constructor(
     private cartService: CartService,
@@ -23,8 +24,9 @@ export class HeaderComponent implements OnInit {
       {
         this.visibleCounter = true;
       }
+      else this.visibleCounter = false;
 
-      this.headerCount = counter;
+      this.cartCount = counter;
     })
   }
 
@@ -34,6 +36,7 @@ export class HeaderComponent implements OnInit {
 
 
   open(){
+    if(this.visibleCounter)
     this.router.navigate(['/cart'])
   }
 

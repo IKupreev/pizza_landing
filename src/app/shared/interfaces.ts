@@ -9,13 +9,9 @@ export interface Menu {
   image: string;
   title: string;
   description: string;
-  price: string;
+  price: number;
 }
 
-export interface Product {
-  id?: string;
-  title: string;
-  price: string;
-}
+
 
 

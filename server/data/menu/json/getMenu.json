@@ -6,21 +6,21 @@
         "image":"assets/images/Pizzas/Cheese_Lovers.png",
         "title":"Cheese Lovers",
         "description":"Combination of Alfredo sauce and two cheeses – Romano, and Parmesan.",
-        "price": "$25.00"
+        "price": "25.00"
       },
       {
         "id": 2,
         "image":"assets/images/Pizzas/Pepperoni.png",
         "title":"Pepperoni Pizza",
         "description":"Pizza with homemade spicy beef sausage",
-        "price": "$30.00"
+        "price": "30.00"
       },
       {
         "id": 3,
         "image":"assets/images/Pizzas/margherita.png",
         "title":"Margherita Pizza",
         "description":"Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.",
-        "price": "$35.99"
+        "price": "35.99"
       }
     ]
   }

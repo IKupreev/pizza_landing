@@ -5,7 +5,7 @@
       <span class="cart__name">{{ p.title }} </span>
       <span class="cart__price">{{ p.price }} </span>
     </div>
-    <button type="button" class="cart__btn" (click)="buy()">BUY</button>
+    <button type="button" class="cart__btn" (click)="!isBuyed ? choise() : toHome()">{{btnName}} {{ sum | currency}}</button>
   </div>
 
 </div>
