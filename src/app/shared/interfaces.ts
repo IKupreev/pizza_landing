@@ -9,7 +9,9 @@ export interface Menu {
   image: string;
   title: string;
   description: string;
-  price: number;
+  priceS: number;
+  priceM: number;
+  priceL: number;
 }
 
 

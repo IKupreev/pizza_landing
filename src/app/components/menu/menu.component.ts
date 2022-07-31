@@ -17,6 +17,7 @@ export class MenuComponent implements OnInit {
  addToCartClick = false;
  cartBtn = false;
  counter: number = 0;
+ curPrice: number = 0;
 
   constructor(
     private menuService: MenuService,
@@ -28,11 +29,11 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     window.addEventListener('scroll', () => {
       this.cartBtn = window.pageYOffset !== 0 && this.addToCartClick;
-    })
-  this.menuList = this.menuService.getMenuList();
+    });
+    this.menuList = this.menuService.getMenuList();
     this.cartService.productCounter.subscribe((counter) => {
       this.counter = counter;
-    })
+    });
   }
 
   addToCart(menu: Menu) {

@@ -18,4 +18,8 @@ export class MenuService {
   getMenuList(): Observable<Menu[]> {
     return this.http.get<apiResponse>(this.url).pipe(pluck('pizza', 'menu'));
   }
+
+  getCurrentPrice() {
+
+  }
 }
