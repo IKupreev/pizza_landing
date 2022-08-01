@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { CartService } from './../../services/cart.service';
-import { apiResponse } from './../../shared/interfaces';
+import { apiResponse, Variants } from './../../shared/interfaces';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { MenuService } from 'src/app/services/menu.service';
@@ -20,6 +20,7 @@ export class MenuComponent implements OnInit {
  cartBtn = false;
  counter: number = 0;
  curPrice: number = 0;
+ selectedSize?: Variants;
 
   constructor(
     private menuService: MenuService,
@@ -44,6 +45,10 @@ export class MenuComponent implements OnInit {
     this.cartBtn = true;
     this.counter++;
     this.cartService.productCounter.next(this.counter);
+  }
+
+  onSelect(event: Variants):void {
+    this.selectedSize = event;
   }
 
 

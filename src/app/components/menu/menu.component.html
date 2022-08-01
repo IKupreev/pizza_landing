@@ -25,12 +25,11 @@
             <span class="menu__price">$</span>
             <div class="menu__option">
               <select class="menu__select" name="select">
-                <option *ngFor="let v of menuList | async">
-                  {{v.variants}}
+                <option *ngFor="let v of m.variants"
+                [value]="v === selectedSize"
+                >
+                  {{v.size}}
                 </option>
-                <!-- <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option> -->
               </select>
               <button
                 type="button"
