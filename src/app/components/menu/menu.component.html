@@ -22,13 +22,16 @@
               <div class="menu__subtitle">{{m.title}}</div>
               <div class="menu__text">{{m.description}}</div>
             </div>
-            <span class="menu__price">${{m.priceS}}</span>
-            <!-- <div class="menu__option">
+            <span class="menu__price">$</span>
+            <div class="menu__option">
               <select class="menu__select" name="select">
-                <option value="small">Small</option>
+                <option *ngFor="let v of menuList | async">
+                  {{m.variants}}
+                </option>
+                <!-- <option value="small">Small</option>
                 <option value="medium">Medium</option>
-                <option value="large">Large</option>
-              </select> -->
+                <option value="large">Large</option> -->
+              </select>
               <button
                 type="button"
                 class="menu__btn"
@@ -36,7 +39,7 @@
               >
               ADD TO CART
               </button>
-            <!-- </div> -->
+            </div>
           </section>
         </div>
       </div>

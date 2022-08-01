@@ -9,9 +9,12 @@ export interface Menu {
   image: string;
   title: string;
   description: string;
-  priceS: number;
-  priceM: number;
-  priceL: number;
+  variants: Variants[];
+}
+
+export interface Variants {
+  size: string;
+  price: number;
 }
 
 

@@ -16,10 +16,10 @@ export class CartService {
     this.eats.push(product);
   }
 
-  sumCart() {
-     this.count = this.eats.map(o => o.priceS).reduce((a,b) => Number(a) + Number(b));
-     return this.count;
-  }
+  // sumCart() {
+  //    this.count = this.eats.map(o => o.variants.map(v => v.price)).reduce((a,b) => Number(a) + Number(b));
+  //    return this.count;
+  // }
 
 
   getItems() {

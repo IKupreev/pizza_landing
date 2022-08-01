@@ -13,6 +13,8 @@ import { Menu } from 'src/app/shared/interfaces';
 })
 export class MenuComponent implements OnInit {
 
+
+
  menuList!: Observable<Menu[]>;
  addToCartClick = false;
  cartBtn = false;

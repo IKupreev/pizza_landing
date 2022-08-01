@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class CartComponent  {
 
-  sum: number | string = this.cartService.sumCart();
+  //sum: number | string = this.cartService.sumCart();
   products = this.cartService.getItems();
   isBuyed: boolean = false;
   btnName: string = "BUY";
@@ -31,7 +31,7 @@ export class CartComponent  {
   buy() {
     this.cartService.clearCart();
     this.products=[];
-    this.sum = "";
+    //this.sum = "";
     window.alert("Thanks for the order!")
 
   }
