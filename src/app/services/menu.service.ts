@@ -16,7 +16,11 @@ export class MenuService {
   constructor(private http: HttpClient) { }
 
   getMenuList(): Observable<Menu[]> {
-    return this.http.get<apiResponse>(this.url).pipe(pluck('pizza', 'menu'));
+    return this.http.get<apiResponse>(this.url)
+      .pipe(
+        pluck('pizza', 'menu')
+
+        );
   }
 
   getCurrentPrice() {
