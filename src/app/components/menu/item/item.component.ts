@@ -32,8 +32,8 @@ export class ItemComponent implements OnInit {
     this.curPrice = this.pizza?.variants[0].price
   }
 
-  addToCart(menu: Menu) {
-    this.cartService.addToCart(menu);
+  addToCart(name?: string, price?: number) {
+    this.cartService.addToCart(name, price);
     this.addToCartClick = true;
     this.cartBtn = true;
     this.counter++;

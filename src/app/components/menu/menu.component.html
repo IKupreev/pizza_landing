@@ -12,34 +12,8 @@
       <div class="menu__row">
         <div
           class="menu__column"
-          *ngFor="let pizza of menuList | async"
-        > <app-item [pizza]="pizza" ></app-item>
-          <!-- <section class="menu__item">
-            <div class="menu__image">
-              <img [src]= "m.image">
-            </div>
-            <div class="menu__content">
-              <div class="menu__subtitle">{{m.title}}</div>
-              <div class="menu__text">{{m.description}}</div>
-            </div>
-            <span class="menu__price">${{m.variants[0].price}}</span>
-            <div class="menu__option">
-              <select class="menu__select" name="select" (change)="onSelect($event)">
-                <option *ngFor="let v of m.variants"
-                [value]="v.price"
-                >
-                  {{v.size}}
-                </option>
-              </select>
-              <button
-                type="button"
-                class="menu__btn"
-                (click)="addToCart(m)"
-              >
-              ADD TO CART
-              </button>
-            </div>
-          </section> -->
+          *ngFor="let pizza of menuList | async">
+        <app-item [pizza]="pizza" ></app-item>
         </div>
       </div>
     </div>

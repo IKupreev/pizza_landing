@@ -7,13 +7,13 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class CartService {
 
-  eats: Menu[] = [];
+  eats: any[] = [];
   count = 0;
   productCounter: BehaviorSubject<number> = new BehaviorSubject(0);
 
 
-  addToCart(product: Menu) {
-    this.eats.push(product);
+  addToCart(name?: string, price?: number) {
+    this.eats.push(name, price);
     console.log(this.eats)
   }
 

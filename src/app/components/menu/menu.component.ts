@@ -44,13 +44,13 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  addToCart(menu: Menu) {
-    this.cartService.addToCart(menu);
-    this.addToCartClick = true;
-    this.cartBtn = true;
-    this.counter++;
-    this.cartService.productCounter.next(this.counter);
-  }
+  // addToCart(menu: Menu) {
+  //   this.cartService.addToCart(menu);
+  //   this.addToCartClick = true;
+  //   this.cartBtn = true;
+  //   this.counter++;
+  //   this.cartService.productCounter.next(this.counter);
+  // }
 
   onSelect(event: any):void {
 
