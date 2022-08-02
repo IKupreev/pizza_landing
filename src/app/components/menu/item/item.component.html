@@ -1,0 +1,26 @@
+<section class="item">
+  <div class="item__image">
+    <img [src]= "pizza?.image">
+  </div>
+  <div class="item__content">
+    <div class="item__subtitle">{{pizza?.title}}</div>
+    <div class="item__text">{{pizza?.description}}</div>
+  </div>
+  <span class="item__price">${{curPrice}}</span>
+  <div class="item__option">
+    <select class="item__select" name="select" (change)="onSelect($event)">
+      <option *ngFor="let v of pizza?.variants"
+      [value]="v.price"
+      >
+        {{v.size}}
+      </option>
+    </select>
+    <button
+      type="button"
+      class="item__btn"
+      (click)="addToCart(pizza!)"
+    >
+    ADD TO CART
+    </button>
+  </div>
+</section>

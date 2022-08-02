@@ -9,6 +9,7 @@ import { PromoComponent } from './components/promo/promo.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './components/cart/cart.component';
+import { ItemComponent } from './components/menu/item/item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CartComponent } from './components/cart/cart.component';
     MenuComponent,
     PromoComponent,
     HeaderComponent,
-    CartComponent
+    CartComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,

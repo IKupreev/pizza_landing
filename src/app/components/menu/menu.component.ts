@@ -5,6 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { MenuService } from 'src/app/services/menu.service';
 import { Menu } from 'src/app/shared/interfaces';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-menu',
@@ -36,6 +37,10 @@ export class MenuComponent implements OnInit {
     this.menuList = this.menuService.getMenuList();
     this.cartService.productCounter.subscribe((counter) => {
       this.counter = counter;
+      if(this.counter > 0) {
+        this.cartBtn = true;
+        this.addToCartClick = true;
+      }
     });
   }
 
@@ -47,8 +52,11 @@ export class MenuComponent implements OnInit {
     this.cartService.productCounter.next(this.counter);
   }
 
-  onSelect(event: Variants):void {
-    this.selectedSize = event;
+  onSelect(event: any):void {
+
+    this.selectedSize = event.target.value;
+    console.log(event.target.value)
+    console.log(this.selectedSize)
   }
 
 
