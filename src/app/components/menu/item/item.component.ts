@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
 import { MenuService } from 'src/app/services/menu.service';
-import { Menu, Variants } from 'src/app/shared/interfaces';
+import {  pizza } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-item',
@@ -13,7 +13,7 @@ import { Menu, Variants } from 'src/app/shared/interfaces';
 export class ItemComponent implements OnInit {
 
 
-  @Input() pizza?: Menu;
+  @Input() pizza?: pizza;
 
 
   addToCartClick = false;
@@ -29,7 +29,7 @@ export class ItemComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.curPrice = this.pizza?.variants[0].price
+   // this.curPrice = this.pizza?.variants[0].price
   }
 
   addToCart(name?: string, price?: number) {

@@ -1,10 +1,9 @@
 import { Router } from '@angular/router';
 import { CartService } from './../../services/cart.service';
-import { apiResponse, Variants } from './../../shared/interfaces';
+import { apiResponse, pizza } from './../../shared/interfaces';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { MenuService } from 'src/app/services/menu.service';
-import { Menu } from 'src/app/shared/interfaces';
 import { ThisReceiver } from '@angular/compiler';
 
 @Component({
@@ -16,12 +15,12 @@ export class MenuComponent implements OnInit {
 
 
 
- menuList!: Observable<Menu[]>;
+ menuList!: Observable<pizza[]>;
  addToCartClick = false;
  cartBtn = false;
  counter: number = 0;
  curPrice: number = 0;
- selectedSize?: Variants;
+// selectedSize?: Variants;
 
   constructor(
     private menuService: MenuService,
@@ -52,12 +51,12 @@ export class MenuComponent implements OnInit {
   //   this.cartService.productCounter.next(this.counter);
   // }
 
-  onSelect(event: any):void {
+  // onSelect(event: any):void {
 
-    this.selectedSize = event.target.value;
-    console.log(event.target.value)
-    console.log(this.selectedSize)
-  }
+  //   this.selectedSize = event.target.value;
+  //   console.log(event.target.value)
+  //   console.log(this.selectedSize)
+  // }
 
 
   open(){
