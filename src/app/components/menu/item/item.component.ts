@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
 import { MenuService } from 'src/app/services/menu.service';
-import {  pizza } from 'src/app/shared/interfaces';
+import {  Pizza, PizzaGroup, pizzaSizes } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-item',
@@ -13,7 +13,9 @@ import {  pizza } from 'src/app/shared/interfaces';
 export class ItemComponent implements OnInit {
 
 
-  @Input() pizza?: pizza;
+
+
+  @Input() pizza?: PizzaGroup;
 
 
   addToCartClick = false;
@@ -28,7 +30,8 @@ export class ItemComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-
+    console.log(this.pizza?.curPizza);
+    console.log(this.pizza)
    // this.curPrice = this.pizza?.variants[0].price
   }
 
@@ -40,9 +43,17 @@ export class ItemComponent implements OnInit {
     this.cartService.productCounter.next(this.counter);
   }
 
-  onSelect(event: any):void {
+  onSelect(group: PizzaGroup, event: any):void {
 
-    this.curPrice = event.target.value;
+    group.curPizza.price = event.target.value;
+    console.log(this.pizza?.curPizza);
+    console.log(this.pizza)
+    console.log(event.target.value)
+  }
+
+  SelectPizza(group: PizzaGroup, pizza: Pizza):void {
+
+    group.curPizza = pizza;
   }
 
 }

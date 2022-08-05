@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { CartService } from './../../services/cart.service';
-import { apiResponse, pizza } from './../../shared/interfaces';
+import { apiResponse, Pizza, PizzaGroup } from './../../shared/interfaces';
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { MenuService } from 'src/app/services/menu.service';
@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
 
 
 
- menuList!: Observable<pizza[]>;
+ menuList!: Observable<PizzaGroup[]>;
  addToCartClick = false;
  cartBtn = false;
  counter: number = 0;

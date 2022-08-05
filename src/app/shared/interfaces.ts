@@ -1,23 +1,31 @@
+export enum pizzaSizes {
+  SM = "Small",
+  MD = "Medium",
+  LG = "Large"
+}
+
 export interface apiResponse {
   menu: {
-    pizza: pizza[];
+    pizza: Pizza[];
   };
 }
 
-export interface pizza {
-  sku: string;
-  image: string;
+export interface Pizza {
   name: string;
-  description: string;
-  size: string;
   price: number;
+  size: pizzaSizes;
+  image: string;
+  description: string;
+  sku: string;
 }
 
 export interface PizzaGroup {
   id: string;
-  curPizza: pizza;
-  pizzas: pizza[];
+  curPizza: Pizza;
+  pizzas: Pizza[];
+  image: string;
   title: string;
+  description: string;
 }
 
 

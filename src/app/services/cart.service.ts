@@ -1,4 +1,3 @@
-import { Menu } from './../shared/interfaces';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 
@@ -18,7 +17,7 @@ export class CartService {
   }
 
   // sumCart() {
-  //    this.count = this.eats.map(o => o.variants.map(v => v.price)).reduce((a,b) => Number(a) + Number(b));
+  //    this.count = this.eats.map(o => o.variants.map(v => v.price)).reduce((a,b) => a + b);
   //    return this.count;
   // }
 
