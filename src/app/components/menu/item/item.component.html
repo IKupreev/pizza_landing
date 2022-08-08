@@ -8,11 +8,11 @@
   </div>
   <span class="item__price">${{pizza?.curPizza?.price}}</span>
   <div class="item__option">
-    <select class="item__select" name="select" (change)="onSelect(pizza!, $event)">
-      <option *ngFor="let v of pizza?.pizzas"
-      [value]="v.price"
+    <select class="item__select" name="select"  (change)="onSelect(pizza!, $event)">
+      <option *ngFor="let pizza of pizza?.pizzas"
+      [value]="pizza.sku"
       >
-        {{v.size}}
+        {{pizza.size}}
       </option>
     </select>
     <button
