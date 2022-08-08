@@ -29,10 +29,7 @@ export class ItemComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    console.log("pizza.curPizza", this.pizza?.curPizza);
-    console.log("pizza", this.pizza)
-    console.log("local pizza: ", this.localPizza)
-   // this.curPrice = this.pizza?.variants[0].price
+
   }
 
   addToCart(name?: string, price?: number) {
@@ -48,21 +45,10 @@ export class ItemComponent implements OnInit {
     {
       if(event.target.value == sk.sku)
       {
-          this.localPizza = sk;
-
+        this.localPizza = sk;
         group.curPizza = this.localPizza;
       }
     }
-
-    //group.curPizza.price = event.target.value;
-    console.log("pizza.curPizza", this.pizza?.curPizza);
-    console.log("pizza", this.pizza)
-    console.log("event", event.target.value)
-  }
-
-  SelectPizza():void {
-      console.log("curPrice: ", this.curPrice);
-   // group.curPizza = pizza;
   }
 
 }
