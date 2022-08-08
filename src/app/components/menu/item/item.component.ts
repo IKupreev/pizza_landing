@@ -16,6 +16,8 @@ export class ItemComponent implements OnInit {
 
   localPizza!: Pizza;
 
+  cart: Pizza[] = [];
+
 
   addToCartClick = false;
   cartBtn = false;
@@ -32,12 +34,13 @@ export class ItemComponent implements OnInit {
 
   }
 
-  addToCart(name?: string, price?: number) {
-    this.cartService.addToCart(name, price);
+  addToCart() {
     this.addToCartClick = true;
     this.cartBtn = true;
     this.counter++;
     this.cartService.productCounter.next(this.counter);
+    this.cart.push(this.pizza?.curPizza!);
+    console.log("cart: ", this.cart)
   }
 
   onSelect(group: PizzaGroup, event: any):void {

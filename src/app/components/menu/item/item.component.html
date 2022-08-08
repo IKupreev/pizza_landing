@@ -9,10 +9,10 @@
   <span class="item__price">${{pizza?.curPizza?.price}}</span>
   <div class="item__option">
     <select class="item__select" name="select"  (change)="onSelect(pizza!, $event)">
-      <option *ngFor="let pizza of pizza?.pizzas"
-      [value]="pizza.sku"
+      <option *ngFor="let pizzas of pizza?.pizzas"
+      [value]="pizzas.sku"
       >
-        {{pizza.size}}
+        {{pizzas.size}}
       </option>
     </select>
     <button
