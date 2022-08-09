@@ -31,7 +31,7 @@ export class ItemComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-
+      console.log("onInit curPizza: ", this.localPizza)
   }
 
   addToCart() {
@@ -39,8 +39,9 @@ export class ItemComponent implements OnInit {
     this.cartBtn = true;
     this.counter++;
     this.cartService.productCounter.next(this.counter);
-    this.cart.push(this.pizza?.curPizza!);
-    console.log("cart: ", this.cart)
+    this.cartService.addToCart(this.localPizza)
+    console.log("counter: ", this.counter)
+    //this.cart.push(this.pizza?.curPizza!);
   }
 
   onSelect(group: PizzaGroup, event: any):void {
@@ -49,7 +50,8 @@ export class ItemComponent implements OnInit {
       if(event.target.value == sk.sku)
       {
         this.localPizza = sk;
-        group.curPizza = this.localPizza;
+        group.curPizza = sk;
+        console.log("onSelect curPizza: ", this.localPizza)
       }
     }
   }

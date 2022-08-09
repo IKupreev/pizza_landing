@@ -1,3 +1,4 @@
+import { Pizza } from './../shared/interfaces';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 
@@ -6,13 +7,14 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class CartService {
 
-  eats: any[] = [];
+  eats: Pizza[] = [];
   count = 0;
   productCounter: BehaviorSubject<number> = new BehaviorSubject(0);
 
 
-  addToCart(name?: string, price?: number) {
-    this.eats.push(name, price);
+  addToCart(pizza: Pizza) {
+    this.eats.push(pizza);
+
     console.log(this.eats)
   }
 
