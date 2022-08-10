@@ -14,8 +14,8 @@ export class CartService {
 
   addToCart(pizza: Pizza) {
     this.eats.push(pizza);
-
-    console.log(this.eats)
+    this.count++;
+    this.productCounter.next(this.count);
   }
 
   // sumCart() {

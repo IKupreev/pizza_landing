@@ -12,12 +12,9 @@ import {  Pizza, PizzaGroup, pizzaSizes } from 'src/app/shared/interfaces';
 })
 export class ItemComponent implements OnInit {
 
-  @Input() pizza?: PizzaGroup;
+  @Input() pizza: PizzaGroup | undefined;
 
   localPizza!: Pizza;
-
-  cart: Pizza[] = [];
-
 
   addToCartClick = false;
   cartBtn = false;
@@ -31,17 +28,21 @@ export class ItemComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-      console.log("onInit curPizza: ", this.localPizza)
+    this.cartService.productCounter.subscribe((counter) => {
+      if(counter > 0)
+      {
+        this.cartBtn = true;
+      }
+      else this.cartBtn = false;
+
+      this.counter = counter;
+    })
   }
 
-  addToCart() {
+  addToCart(pizza: Pizza) {
     this.addToCartClick = true;
     this.cartBtn = true;
-    this.counter++;
-    this.cartService.productCounter.next(this.counter);
-    this.cartService.addToCart(this.localPizza)
-    console.log("counter: ", this.counter)
-    //this.cart.push(this.pizza?.curPizza!);
+    this.cartService.addToCart(pizza)
   }
 
   onSelect(group: PizzaGroup, event: any):void {
@@ -51,7 +52,6 @@ export class ItemComponent implements OnInit {
       {
         this.localPizza = sk;
         group.curPizza = sk;
-        console.log("onSelect curPizza: ", this.localPizza)
       }
     }
   }
