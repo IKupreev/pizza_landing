@@ -12,7 +12,7 @@ import {  Pizza, PizzaGroup, pizzaSizes } from 'src/app/shared/interfaces';
 })
 export class ItemComponent implements OnInit {
 
-  @Input() pizza: PizzaGroup | undefined;
+  @Input() pizza?: PizzaGroup;
 
   localPizza!: Pizza;
 
