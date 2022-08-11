@@ -47,7 +47,5 @@ export class MenuService {
         );
   }
 
-  getCurrentPrice() {
 
-  }
 }

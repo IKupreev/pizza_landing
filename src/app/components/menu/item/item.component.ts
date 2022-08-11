@@ -28,20 +28,12 @@ export class ItemComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.cartService.productCounter.subscribe((counter) => {
-      if(counter > 0)
-      {
-        this.cartBtn = true;
-      }
-      else this.cartBtn = false;
 
-      this.counter = counter;
-    })
   }
 
   addToCart(pizza: Pizza) {
-    this.addToCartClick = true;
-    this.cartBtn = true;
+    //this.addToCartClick = true;
+    //this.cartBtn = true;
     this.cartService.addToCart(pizza)
   }
 

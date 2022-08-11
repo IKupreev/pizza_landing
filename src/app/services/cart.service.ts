@@ -8,22 +8,25 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class CartService {
 
   eats: Pizza[] = [];
+  counterName = 0;
   count = 0;
   sum = 0;
   productCounter: BehaviorSubject<number> = new BehaviorSubject(0);
 
 
   addToCart(pizza: Pizza) {
+
     this.eats.push(pizza);
+    this.counterName++;
     this.count++;
     this.productCounter.next(this.count);
+    console.log("eats: ", this.eats)
   }
 
   sumCart() {
      this.sum = this.eats.map(o => o.price).reduce((a,b) => a + b);
      return this.sum;
   }
-
 
   getItems() {
     return this.eats;
@@ -34,6 +37,5 @@ export class CartService {
     this.eats = [];
     this.productCounter.next(this.count);
     return this.eats;
-
   }
 }

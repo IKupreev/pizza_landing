@@ -43,21 +43,6 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  // addToCart(menu: Menu) {
-  //   this.cartService.addToCart(menu);
-  //   this.addToCartClick = true;
-  //   this.cartBtn = true;
-  //   this.counter++;
-  //   this.cartService.productCounter.next(this.counter);
-  // }
-
-  // onSelect(event: any):void {
-
-  //   this.selectedSize = event.target.value;
-  //   console.log(event.target.value)
-  //   console.log(this.selectedSize)
-  // }
-
 
   open(){
     this.router.navigate(['/cart'])

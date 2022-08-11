@@ -11,6 +11,7 @@ export class CartComponent  {
 
   sum: number | string = this.cartService.sumCart();
   products = this.cartService.getItems();
+  counterName = this.cartService.counterName;
   isBuyed: boolean = false;
   btnName: string = "BUY";
 
