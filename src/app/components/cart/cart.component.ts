@@ -11,7 +11,6 @@ export class CartComponent  {
 
   sum: number | string = this.cartService.sumCart();
   products = this.cartService.getItems();
-  counterName = this.cartService.counterName;
   isBuyed: boolean = false;
   btnName: string = "BUY";
 
@@ -25,22 +24,29 @@ export class CartComponent  {
       this.btnName = "To the home page."
       this.buy();
     }
-
-
   }
 
   buy() {
     this.cartService.clearCart();
     this.products=[];
     this.sum = "";
-    window.alert("Thanks for the order!")
-
   }
 
   toHome() {
     this.router.navigate(['/home']);
   }
 
-
+  removeFromCart(index: number): void {
+    let lenght  =  this.products.length;
+    lenght--;
+    if(lenght > 0) {
+    this.cartService.removeFromCart(index);
+    this.sum = this.cartService.sumCart();
+    } else {
+      this.choise();
+    }
+    console.log("Product: ", this.products)
+    console.log("lenght: ", lenght)
+  }
 
 }

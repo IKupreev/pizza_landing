@@ -1,13 +1,25 @@
 <div class="cart">
   <h3 class="cart__title">Cart</h3>
   <div class="cart__body">
-    <div class="cart__item" *ngFor="let p of products">
-      <span class="cart__name">{{ p.name }} </span>
-      <span class="cart__counterName">{{ counterName }} </span>
-      <span class="cart__price">{{ p.price }} </span>
+    <div class="cart__container" *ngIf="!isBuyed; else empty">
+      <div class="cart__item" *ngFor="let p of products; let i=index">
+        <span class="cart__name">{{ p.name }} <br> ({{ p.size }}) </span>
+        <span class="cart__price">{{ p.price }} </span>
+        <button
+        type="button"
+        class="cart__btnCross"
+        (click)="removeFromCart(i)"
+        >
+          <img class="cart__cross" src="assets/images/icons/crosslinearW.svg">
+        </button>
+      </div>
     </div>
-    <button type="button" class="cart__btn" (click)="!isBuyed ? choise() : toHome()">{{btnName}} {{ sum | currency}}</button>
-  </div>
+      <button type="button" class="cart__btn" (click)="!isBuyed ? choise() : toHome()">{{btnName}} {{ sum | currency}}</button>
+    </div>
 
 </div>
+
+<ng-template #empty>
+  <p class="cartEmpty">Сart is empty</p>
+</ng-template>
 

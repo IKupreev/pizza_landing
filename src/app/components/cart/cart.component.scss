@@ -20,18 +20,23 @@
     padding-top: 100px;
     padding-left: 40px;
     padding-right: 40px;
-    display: flex;
-    flex: 0 0 auto;
-    flex-direction: column;
-    align-items: center;
+
     border: 1px solid #bdbdbd;
     border-radius: 180px 180px 30px 30px;
     width: 100%;
     height: 100vh;
   }
+  &__container {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &__item {
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0px auto;
     width: 100%;
     margin: 10px;
@@ -75,4 +80,27 @@
     font-size: 16px;
     line-height: 1.20;
   }
+  &__btnCross {
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EC0000;
+    border-radius: 25px;
+    width: 200px;
+    height: 30px;
+  }
+  &__cross {
+
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.cartEmpty {
+  text-align: center;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 2.05px;
+  margin: 0px 0px 40px 0px;
 }
