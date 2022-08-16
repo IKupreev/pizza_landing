@@ -89,8 +89,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // padding-left: 23.5px;
-    // padding-right: 23.5px;
+
     gap: 4px;
   }
 
@@ -139,7 +138,6 @@
     padding: 9px 16px;
     margin-top: 10.5px;
     margin-bottom: 5px;
-    //margin: 10.5px 23.5px 5px;
   }
 
   // .menu__btn
@@ -147,7 +145,6 @@
   &__btn {
     margin-top: 5px;
     margin-bottom: 24px;
-    //margin: 5px 23.5px 24px;
     background-color: #EC0000;
     border-radius: 25px;
     width: 100%;
@@ -189,17 +186,7 @@
     }
     &__option {
       width: 100%;
-      // margin-left: auto;
-      // margin-right: auto;
     }
-    // &__select {
-    //   width: 100%;
-    //   height: 40px;
-    // }
-    // &__btn {
-    //   width: 100%;
-    //   height: 40px;
-    // }
   }
 
 

@@ -52,6 +52,15 @@
 
   }
 
+  &__btnInc {
+    color: white;
+    margin: 4px 4px;
+    background-color: #EC0000;
+    border-radius: 25px;
+    width: 100px;
+    height: 30px;
+  }
+
   &__counterName {
     text-align: center;
     margin-right: 5px;
@@ -64,11 +73,12 @@
     text-align: center;
     font-weight: 500;
     font-size: 16px;
-    width: 100%;
+    width: 30%;
 
   }
 
   &__btn {
+
     margin-top: 5px;
     margin-bottom: 24px;
     background-color: #EC0000;
@@ -81,7 +91,8 @@
     line-height: 1.20;
   }
   &__btnCross {
-    margin-right: 40px;
+    margin: 4px 4px;
+    margin-right: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,6 +105,13 @@
 
     width: 40px;
     height: 40px;
+  }
+
+  @media(max-width: 500px) {
+    &__body {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 }
 

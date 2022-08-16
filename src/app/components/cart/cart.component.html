@@ -6,7 +6,7 @@
         <span class="cart__name">{{ p.name }} <br> ({{ p.size }}) </span>
         <button
         type="button"
-        class="cart__btnCross"
+        class="cart__btnInc"
         (click)="inc(i)"
         >
         <span class="cart__price">+</span>
@@ -14,7 +14,7 @@
         <span class="cart__price">{{ p.counter }} </span>
         <button
         type="button"
-        class="cart__btnCross"
+        class="cart__btnInc"
         (click)="decr(i)"
         >
         <span class="cart__price">-</span>
