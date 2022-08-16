@@ -13,6 +13,7 @@ export class CartComponent  {
   products = this.cartService.getItems();
   isBuyed: boolean = false;
   btnName: string = "BUY";
+  cartMessage: string = "Сart is empty"
 
   constructor(
     private cartService: CartService,
@@ -21,15 +22,31 @@ export class CartComponent  {
   choise() {
     this.isBuyed = true;
     if(this.isBuyed) {
+      this.cartMessage = "Thanks for the purchase. Come again!"
       this.btnName = "To the home page."
       this.buy();
+    } else {
+      this.cartMessage = "Сart is empty"
     }
   }
+
+
+
 
   buy() {
     this.cartService.clearCart();
     this.products=[];
     this.sum = "";
+
+  }
+
+  inc(index: number) {
+    this.cartService.inc(index);
+    this.sum = this.cartService.sumCart();
+  }
+  decr(index: number) {
+    this.cartService.decr(index);
+    this.sum = this.cartService.sumCart();
   }
 
   toHome() {
@@ -37,16 +54,18 @@ export class CartComponent  {
   }
 
   removeFromCart(index: number): void {
+
     let lenght  =  this.products.length;
     lenght--;
     if(lenght > 0) {
     this.cartService.removeFromCart(index);
     this.sum = this.cartService.sumCart();
     } else {
-      this.choise();
+      this.isBuyed = true;
+      this.cartMessage = "Сart is empty"
+      this.btnName = "To the home page."
+      this.buy();
     }
-    console.log("Product: ", this.products)
-    console.log("lenght: ", lenght)
   }
 
 }

@@ -17,6 +17,7 @@ export interface Pizza {
   image: string;
   description: string;
   sku: string;
+  counter: number;
 }
 
 export interface PizzaGroup {

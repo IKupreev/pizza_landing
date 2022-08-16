@@ -14,7 +14,6 @@ export class ItemComponent implements OnInit {
 
   @Input() pizza?: PizzaGroup;
 
-  localPizza!: Pizza;
 
   addToCartClick = false;
   cartBtn = false;
@@ -32,8 +31,6 @@ export class ItemComponent implements OnInit {
   }
 
   addToCart(pizza: Pizza) {
-    //this.addToCartClick = true;
-    //this.cartBtn = true;
     this.cartService.addToCart(pizza)
   }
 
@@ -42,7 +39,6 @@ export class ItemComponent implements OnInit {
     {
       if(event.target.value == sk.sku)
       {
-        this.localPizza = sk;
         group.curPizza = sk;
       }
     }

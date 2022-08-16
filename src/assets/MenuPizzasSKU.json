@@ -7,7 +7,8 @@
         "name":"Cheese Lovers",
         "description":"Combination of Alfredo sauce and two cheeses – Romano, and Parmesan.",
         "size":"Small",
-        "price": 20.00
+        "price": 20.00,
+        "counter": 1
       },
       {
         "sku": "Chslov-MD",
@@ -15,7 +16,8 @@
         "name":"Cheese Lovers",
         "description":"Combination of Alfredo sauce and two cheeses – Romano, and Parmesan.",
         "size":"Medium",
-        "price": 22.50
+        "price": 22.50,
+        "counter": 1
       },
       {
         "sku": "Chslov-LG",
@@ -23,7 +25,8 @@
         "name":"Cheese Lovers",
         "description":"Combination of Alfredo sauce and two cheeses – Romano, and Parmesan.",
         "size":"Large",
-        "price": 25.00
+        "price": 25.00,
+        "counter": 1
       },
       {
         "sku": "Peprni-SM",
@@ -31,7 +34,8 @@
         "name":"Pepperoni Pizza",
         "description":"Pizza with homemade spicy beef sausage",
         "size":"Small",
-        "price": 25.00
+        "price": 25.00,
+        "counter": 1
       },
       {
         "sku": "Peprni-MD",
@@ -39,7 +43,8 @@
         "name":"Pepperoni Pizza",
         "description":"Pizza with homemade spicy beef sausage",
         "size":"Medium",
-        "price": 27.50
+        "price": 27.50,
+        "counter": 1
       },
       {
         "sku": "Peprni-LG",
@@ -47,7 +52,8 @@
         "name":"Pepperoni Pizza",
         "description":"Pizza with homemade spicy beef sausage",
         "size":"Large",
-        "price": 30.00
+        "price": 30.00,
+        "counter": 1
       },
       {
         "sku": "Margta-SM",
@@ -55,7 +61,8 @@
         "name":"Margherita Pizza",
         "description":"Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.",
         "size":"Small",
-        "price": 30.00
+        "price": 30.00,
+        "counter": 1
       },
       {
         "sku": "Margta-MD",
@@ -63,7 +70,8 @@
         "name":"Margherita Pizza",
         "description":"Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.",
         "size":"Medium",
-        "price": 32.50
+        "price": 32.50,
+        "counter": 1
       },
       {
         "sku": "Margta-LG",
@@ -71,7 +79,8 @@
         "name":"Margherita Pizza",
         "description":"Made with San Marzano tomatoes, mozzarella cheese, and fresh basil.",
         "size":"Large",
-        "price": 35.00
+        "price": 35.00,
+        "counter": 1
       }
     ]
   }

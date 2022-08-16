@@ -4,7 +4,22 @@
     <div class="cart__container" *ngIf="!isBuyed; else empty">
       <div class="cart__item" *ngFor="let p of products; let i=index">
         <span class="cart__name">{{ p.name }} <br> ({{ p.size }}) </span>
-        <span class="cart__price">{{ p.price }} </span>
+        <button
+        type="button"
+        class="cart__btnCross"
+        (click)="inc(i)"
+        >
+        <span class="cart__price">+</span>
+        </button>
+        <span class="cart__price">{{ p.counter }} </span>
+        <button
+        type="button"
+        class="cart__btnCross"
+        (click)="decr(i)"
+        >
+        <span class="cart__price">-</span>
+        </button>
+        <span class="cart__price">{{ p.price * p.counter}} </span>
         <button
         type="button"
         class="cart__btnCross"
@@ -20,6 +35,6 @@
 </div>
 
 <ng-template #empty>
-  <p class="cartEmpty">Сart is empty</p>
+  <p class="cartEmpty">{{ cartMessage }}</p>
 </ng-template>
 
