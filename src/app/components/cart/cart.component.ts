@@ -30,14 +30,17 @@ export class CartComponent  {
     }
   }
 
-
-
-
   buy() {
     this.cartService.clearCart();
     this.products=[];
     this.sum = "";
+  }
 
+  emptyCart() {
+    this.isBuyed = true;
+    this.cartMessage = "Сart is empty"
+    this.btnName = "To the home page."
+    this.buy();
   }
 
   inc(index: number) {
@@ -47,6 +50,10 @@ export class CartComponent  {
   decr(index: number) {
     this.cartService.decr(index);
     this.sum = this.cartService.sumCart();
+    if(this.products.length == 0)
+    {
+      this.emptyCart();
+    }
   }
 
   toHome() {
@@ -54,18 +61,13 @@ export class CartComponent  {
   }
 
   removeFromCart(index: number): void {
-
     let lenght  =  this.products.length;
     lenght--;
     if(lenght > 0) {
     this.cartService.removeFromCart(index);
     this.sum = this.cartService.sumCart();
     } else {
-      this.isBuyed = true;
-      this.cartMessage = "Сart is empty"
-      this.btnName = "To the home page."
-      this.buy();
+      this.emptyCart();
     }
   }
-
 }
